@@ -1,0 +1,49 @@
+% Developer CV LaTeX Template
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{montserrat} % Use Montserrat font (requires texlive-fonts-extra)
+\usepackage{inconsolata} % Use Montserrat font (requires texlive-fonts-extra)
+\renewcommand{\familydefault}{\sfdefault} % Use sans-serif as default
+
+% Colors and section styling
+\definecolor{devblue}{HTML}{005fa3}
+\titleformat{\section}{\large\bfseries\color{devblue}}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{devblue}{$author$}}
+\rhead{\thepage}
+
+% Fix for Pandoc's tightlist
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Personal data (filled by Pandoc variables)
+\title{\textcolor{devblue}{\large $author$}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\vspace{-1em}
+\noindent\textbf{Email:} \href{mailto:$email$}{\texttt{$email$}} \hspace{1em}
+\textbf{Phone:} $phone$ \hspace{1em}
+\textbf{GitHub:} \href{https://github.com/$github$}{\texttt{$github$}} \hspace{1em}
+\textbf{LinkedIn:} \href{https://linkedin.com/in/$linkedin$}{\texttt{$linkedin$}}
+
+\vspace{1em}
+
+$body$
+
+\end{document}
