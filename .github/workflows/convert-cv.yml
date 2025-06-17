@@ -1,0 +1,42 @@
+name: Render CV
+
+on:
+  push:
+    paths:
+      - "cv/*.md"
+      - "cv/templates/**"
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Create outputs/
+        run: mkdir outputs
+
+      - name: Convert to PDF
+        uses: docker://pandoc/latex:3.5
+        with:
+          args: cv/cv.md --output=outputs/cv.pdf --template=cv/templates/cv-template.tex
+
+      - name: Convert to LaTeX
+        uses: docker://pandoc/latex:3.5
+        with:
+          args: cv/cv.md --output=outputs/cv.tex --template=cv/templates/cv-template.tex
+
+      - name: Convert to DOCX
+        uses: docker://pandoc/latex:3.5
+        with:
+          args: outputs/cv.tex --output=outputs/cv.docx --reference-doc=cv/templates/cv-template.docx -t docx
+
+      - name: Convert to HTML
+        uses: docker://pandoc/latex:3.5
+        with:
+          args: cv/cv.md --output=outputs/cv.html --template=cv/templates/cv-template.html --css=../cv/templates/style.css
+
+      - name: Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: cv-outputs
+          path: outputs/
