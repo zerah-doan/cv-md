@@ -2,7 +2,7 @@
 
 [![Render CV](https://github.com/thrly/md-cv/actions/workflows/convert-cv.yml/badge.svg)](https://github.com/thrly/md-cv/actions/workflows/convert-cv.yml)
 
-Keep your markdown CV up to date with version control and various common formats: HTML, PDF, DOCX, and LaTeX. The conversion is handled using GitHub actions with Pandoc via official Docker images.
+Keep your markdown CV up to date with version control and various common formats: HTML, PDF, DOCX, and LaTeX, as well as a hosted [GitHub Pages version](https://thrly.github.io/md-cv/outputs/cv.html). The conversion is handled using GitHub actions with Pandoc via official Docker images.
 
 ## Project Structure
 
@@ -34,7 +34,7 @@ md-cv/
   - Uploads the `outputs/` directory as a workflow artifact.
   - Commits and pushes the updated `outputs/` directory back to the repository (on GitHub Actions only).
 
-## Getting Started to trigger renders
+## Getting Started
 
 1. **Fork this repository**
 2. **Clone to your local machine**
@@ -77,6 +77,14 @@ md-cv/
 > [!NOTE]
 > If you run change the latex template, you may find errors where packages are not already included in the [`docker://pandoc/extra`](https://hub.docker.com/r/pandoc/extra) build.
 
+## GitHub Pages
+
+To enhable a hosted GitHub Pages version:
+
+1. Go to your repo Settings > Pages.
+2. Under `Source`, select `Deploy from a branch`
+3. Under branch, select `master` and `/(root)`. Save
+4. Your CV should be accessible at: <https://your-github-username.github.io/md-cv/outputs/cv.html>
 
 ## Requirements
 
