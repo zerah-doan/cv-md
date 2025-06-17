@@ -74,6 +74,10 @@ md-cv/
 > [!CAUTION]
 > If you run the workflow locally with [`act`](https://github.com/nektos/act), the commit/push step is skipped to avoid hangs or errors.
 
+> [!NOTE]
+> If you run change the latex template, you may find errors where packages are not already included in the [`docker://pandoc/extra`](https://hub.docker.com/r/pandoc/extra) build.
+
+
 ## Requirements
 
 - A GitHub account with Actions enabled.
