@@ -1,0 +1,125 @@
+% Developer CV LaTeX Template
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{parskip}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+% \usepackage{montserrat} % Use Montserrat font (requires texlive-fonts-extra)
+% \usepackage{inconsolata} % Use Montserrat font (requires texlive-fonts-extra)
+\renewcommand{\familydefault}{\sfdefault} % Use sans-serif as default
+
+% Colors and section styling
+\definecolor{devblue}{HTML}{005fa3}
+\titleformat{\section}{\large\bfseries\color{devblue}}{}{0em}{}
+\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{devblue}{Oliver Thurley}}
+\rhead{\thepage}
+
+% Fix for Pandoc's tightlist
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Personal data (filled by Pandoc variables)
+\title{\textcolor{devblue}{\large Oliver Thurley}}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\vspace{-1em}
+\noindent\textbf{Email:} \href{mailto:example@gmail.com}{\texttt{example@gmail.com}} \hspace{1em}
+\textbf{Phone:} +447792------ \hspace{1em}
+\textbf{GitHub:} \href{https://github.com/thrly}{\texttt{thrly}} \hspace{1em}
+\textbf{LinkedIn:} \href{https://linkedin.com/in/oliver-thurley}{\texttt{oliver-thurley}}
+
+\vspace{1em}
+
+Dynamic and detail-oriented professional with a strong background in
+{[}Your Field/Industry{]}. Proven ability to manage projects, lead
+teams, and deliver results in fast-paced environments.
+
+\subsection{Education}\label{education}
+
+\subsubsection{Bachelor of Science in {[}Your
+Major{]}}\label{bachelor-of-science-in-your-major}
+
+{[}Your University{]}, {[}City, State{]}\\
+{[}Month, Year{]} - {[}Month, Year{]}
+
+\subsection{Experience}\label{experience}
+
+\subsubsection{{[}Your Job Title{]}}\label{your-job-title}
+
+{[}Your Company{]}, {[}City, State{]}\\
+{[}Month, Year{]} - Present
+
+\begin{itemize}
+\tightlist
+\item
+  Developed and implemented {[}specific project or task{]}.
+\item
+  Collaborated with {[}team or department{]} to achieve {[}specific
+  goal{]}.
+\end{itemize}
+
+\subsubsection{{[}Previous Job Title{]}}\label{previous-job-title}
+
+{[}Previous Company{]}, {[}City, State{]}\\
+{[}Month, Year{]} - {[}Month, Year{]}
+
+\begin{itemize}
+\tightlist
+\item
+  Assisted in {[}specific project or task{]}.
+\item
+  Improved {[}specific process or metric{]} by {[}percentage or
+  outcome{]}.
+\end{itemize}
+
+\subsection{Skills}\label{skills}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Technical Skills:} {[}Skill 1{]}, {[}Skill 2{]}, {[}Skill 3{]}
+\item
+  \textbf{Soft Skills:} {[}Skill 1{]}, {[}Skill 2{]}, {[}Skill 3{]}
+\end{itemize}
+
+\subsection{Certifications}\label{certifications}
+
+\begin{itemize}
+\tightlist
+\item
+  {[}Certification Name{]}, {[}Issuing Organization{]} - {[}Year{]}
+\item
+  {[}Certification Name{]}, {[}Issuing Organization{]} - {[}Year{]}
+\end{itemize}
+
+\subsection{Projects}\label{projects}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{{[}Project Name{]}}: Brief description of the project and your
+  role.
+\item
+  \textbf{{[}Project Name{]}}: Brief description of the project and your
+  role.
+\end{itemize}
+
+\subsection{References}\label{references}
+
+Available upon request.
+
+\end{document}
