@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>$author$: $title$</title>
+    $for(css)$
+    <link rel="stylesheet" href="$css$" />
+    $endfor$
+  </head>
+  <body>
+    <h1>$author$</h1>
+    <div class="social">
+      <ul>
+        <li><a href="mailto:$email$">$email$</a></li>
+        <li>$phone$</li>
+        <li><a href="https://github.com/$github$">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/$linkedin$">LinkedIn</a></li>
+      </ul>
+    </div>
+    <hr />
+    $body$
+  </body>
+  <footer>This CV is automated from <a href="https://github.com/thrly/cv-md">GitHub</a>. Last updated $updated$</footer>
+</html>
