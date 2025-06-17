@@ -1,38 +1,54 @@
-# CV Conversion Workflow
+# Markdown CV Formatting Workflow
 
-This project provides a GitHub Actions workflow to convert a CV written in Markdown format into various output formats, including HTML, PDF, DOCX, and LaTeX. The conversion is handled using Pandoc, a powerful document converter.
+[![Render CV](https://github.com/thrly/md-cv/actions/workflows/convert-cv.yml/badge.svg)](https://github.com/thrly/md-cv/actions/workflows/convert-cv.yml)
+
+Keep your markdown CV up to date with version control and various common formats: HTML, PDF, DOCX, and LaTeX. The conversion is handled using GitHub actions with Pandoc via official Docker images.
 
 ## Project Structure
 
-```text
-cv-conversion-workflow
-├── .github
-│   └── workflows
-│       └── convert-cv.yml  # GitHub Actions workflow for conversion
-├── cv
-│   └── cv.md                # Source CV in Markdown format
-├── outputs
-│   ├── cv.html              # Generated CV in HTML format
-│   ├── cv.pdf               # Generated CV in PDF format
-│   ├── cv.docx              # Generated CV in DOCX format
-│   └── cv.tex               # Generated CV in LaTeX format
-└── README.md                # Project documentation
+```bash
+md-cv/
+├── .github/
+│   └── workflows/
+│       └── convert-cv.yml     # GitHub Actions workflow for conversion
+├── cv/
+│   ├── cv.md                  # Your CV in Markdown format
+│   └── templates/
+│       ├── cv-template.tex    # LaTeX template
+│       ├── cv-template.html   # HTML template
+│       ├── cv-template.docx   # DOCX reference
+│       └── style.css          # Custom CSS for HTML output
+├── outputs/
+│   ├── cv.html                # Generated CV in HTML format
+│   ├── cv.pdf                 # Generated CV in PDF format
+│   ├── cv.docx                # Generated CV in DOCX format
+│   └── cv.tex                 # Generated CV in LaTeX format
+└── README.md                  # Project docs
 ```
 
-## Getting Started
+## How It Works
 
-To use this workflow, follow these steps:
+- On every push to the [cv.md](/cv/cv.md) file or `cv/templates/`, the workflow runs and:
+  - Converts `cv/cv.md` to PDF, LaTeX, DOCX, and HTML using Pandoc Docker images.
+  - Saves all generated files in the `outputs/` directory.
+  - Uploads the `outputs/` directory as a workflow artifact.
+  - Commits and pushes the updated `outputs/` directory back to the repository (on GitHub Actions only).
 
-1. **Clone the Repository**: Clone this repository to your local machine.
+## Getting Started to trigger renders
+
+1. **Fork this repository**
+2. **Clone to your local machine**
 
    ```bash
-   git clone https://github.com/yourusername/cv-conversion-workflow.git
-   cd cv-conversion-workflow
+   git clone https://github.com/yourusername/md-cv.git
+   cd md-cv
    ```
 
-2. **Modify Your CV**: Edit the `cv/cv.md` file to update your CV content as needed.
+3. **Edit Your CV**
 
-3. **Push Changes**: Commit and push your changes to the GitHub repository.
+   Update `cv/cv.md` with your latest information. You can also edit templates in `cv/templates/`.
+
+4. **Push Changes**
 
    ```bash
    git add cv/cv.md
@@ -40,24 +56,25 @@ To use this workflow, follow these steps:
    git push origin main
    ```
 
-4. **Trigger the Workflow**: The workflow will automatically trigger on push events to the main branch. You can check the progress in the "Actions" tab of your GitHub repository.
+5. **Workflow Execution**
 
-5. **Access Outputs**: Once the workflow completes, the generated files will be available in the `outputs` directory.
+   - The workflow triggers automatically on push.
+   - You can monitor progress in the "Actions" tab on GitHub.
 
-## Outputs
+6. **Accessing Outputs**
 
-The following formats will be generated:
+   - The latest generated files are always available in the `outputs/` directory in the repository.
+   - You can also download them as workflow artifacts from the GitHub Actions run summary.
 
-- `cv.html`: Your CV in HTML format.
-- `cv.pdf`: Your CV in PDF format.
-- `cv.docx`: Your CV in DOCX format.
-- `cv.tex`: Your CV in LaTeX format.
+## Notes
+
+- The workflow uses official Pandoc Docker images for reproducible builds.
+- The `outputs/` directory is committed back to the repository automatically (only on GitHub Actions, not when running locally with `act`).
+
+> [!CAUTION]
+> If you run the workflow locally with [`act`](https://github.com/nektos/act), the commit/push step is skipped to avoid hangs or errors.
 
 ## Requirements
 
-- Ensure that you have a GitHub account and access to GitHub Actions.
-- The workflow uses Pandoc, which will be installed automatically during the workflow execution.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
+- A GitHub account with Actions enabled.
+- No local Pandoc or TeX installation is required; all conversion is handled in the workflow.
