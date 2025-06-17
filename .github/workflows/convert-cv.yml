@@ -9,34 +9,46 @@ on:
 jobs:
   convert_via_pandoc:
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
       - name: Create outputs/
-        run: mkdir outputs
+        run: mkdir -p outputs
 
       - name: Convert to PDF
-        uses: docker://pandoc/latex:3.5
+        uses: docker://pandoc/extra:3.7
         with:
           args: cv/cv.md --output=outputs/cv.pdf --template=cv/templates/cv-template.tex
 
       - name: Convert to LaTeX
-        uses: docker://pandoc/latex:3.5
+        uses: docker://pandoc/latex:3.7
         with:
           args: cv/cv.md --output=outputs/cv.tex --template=cv/templates/cv-template.tex
 
       - name: Convert to DOCX
-        uses: docker://pandoc/latex:3.5
+        uses: docker://pandoc/core:3.7
         with:
           args: outputs/cv.tex --output=outputs/cv.docx --reference-doc=cv/templates/cv-template.docx -t docx
 
       - name: Convert to HTML
-        uses: docker://pandoc/latex:3.5
+        uses: docker://pandoc/core:3.7
         with:
           args: cv/cv.md --output=outputs/cv.html --template=cv/templates/cv-template.html --css=../cv/templates/style.css
 
-      - name: Upload outputs
+      - name: Upload outputs to Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: cv-outputs
-          path: outputs/
+          name: outputs
+          path: outputs
+
+      - name: Commit and push outputs to repository
+        if: ${{ github.server_url == 'https://github.com' }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add outputs/
+          git commit -m "Update generated CV outputs [skip ci]" || echo "No changes to commit"
+          git push
