@@ -2,7 +2,7 @@
 
 [![Render CV](https://github.com/thrly/md-cv/actions/workflows/convert-cv.yml/badge.svg)](https://github.com/thrly/md-cv/actions/workflows/convert-cv.yml)
 
-Keep your markdown CV up-to-date with version control and available in various common formats: HTML, PDF, DOCX, and LaTeX. A [live web version](https://thrly.github.io/md-cv/outputs/cv.html) is also hosted with GitHub Pages under your GitHub username/custom domain.
+Keep your markdown CV up-to-date with version control and available in various common formats: HTML, PDF, DOCX, and LaTeX. A [live web version](https://thrly.github.io/md-cv/outputs/cv.html) is also hosted with GitHub Pages.
 
 The format rendering is handled using GitHub actions using Pandoc via official Docker images.
 
@@ -86,7 +86,7 @@ To enhable a hosted GitHub Pages version:
 1. Go to your repo Settings > Pages.
 2. Under `Source`, select `Deploy from a branch`
 3. Under branch, select `master` and `/(root)`. Save
-4. Your CV should be accessible at: `https://your-github-username.github.io/cv-md/outputs/cv.html`
+4. Your CV will be accessible at: `https://your-github-username.github.io/cv-md/outputs/cv.html`
 
 ## Requirements
 
