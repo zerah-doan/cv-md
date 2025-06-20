@@ -13,7 +13,8 @@
 % Colors and section styling
 \definecolor{devblue}{HTML}{005fa3}
 \titleformat{\section}{\large\bfseries\color{devblue}}{}{0em}{}
-\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+% Remove numbering from subsection headings
+\titleformat{\subsection}[block]{\normalsize\bfseries\color{black}}{}{0em}{}
 
 % Header and footer
 \pagestyle{fancy}
@@ -35,8 +36,9 @@
 \maketitle
 
 \vspace{-1em}
-\noindent\textbf{Email:} \href{mailto:example@gmail.com}{\texttt{example@gmail.com}} \hspace{1em}
+\noindent\href{mailto:example@gmail.com}{\texttt{example@gmail.com}} \hspace{1em}
 \textbf{Phone:} +447792------ \hspace{1em}
+\href{https://thrly.com}{\texttt{thrly.com}} \hspace{1em}
 \textbf{GitHub:} \href{https://github.com/thrly}{\texttt{thrly}} \hspace{1em}
 \textbf{LinkedIn:} \href{https://linkedin.com/in/oliver-thurley}{\texttt{oliver-thurley}}
 
@@ -116,8 +118,10 @@ Major{]}}\label{bachelor-of-science-in-your-major}
   role.
 \end{itemize}
 
-\subsection{References}\label{references}
+\subsection{Contact}\label{contact}
 
-Available upon request.
+Please get in touch via \href{mailto:example@gmail.com}{email} and find
+me on \href{https://github.com/}{GitHub} or
+\href{https://www.linkedin.com/in/}{LinkedIn}.
 
 \end{document}
