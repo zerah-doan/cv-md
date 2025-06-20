@@ -1,15 +1,17 @@
 # Markdown CV Formatting Workflow
 
-[![Render CV](https://github.com/thrly/md-cv/actions/workflows/convert-cv.yml/badge.svg)](https://github.com/thrly/md-cv/actions/workflows/convert-cv.yml)
+[![Render CV](https://github.com/thrly/cv-md/actions/workflows/convert-cv.yml/badge.svg)](https://github.com/thrly/md-cv/actions/workflows/convert-cv.yml)
 
-Keep your markdown CV up-to-date with version control and available in various common formats: HTML, PDF, DOCX, and LaTeX. A [live web version](https://thrly.github.io/md-cv/outputs/cv.html) is also hosted with GitHub Pages.
+Keep your markdown CV up-to-date with version control and available in various common formats: HTML, PDF, DOCX, and LaTeX. A [live web version](https://thrly.github.io/cv-md/outputs/cv.html) is also hosted with GitHub Pages.
 
 The format rendering is handled using GitHub actions using Pandoc via official Docker images.
+
+![Diagram](img/cv-diagram.svg)
 
 ## Project Structure
 
 ```bash
-md-cv/
+cv-md/
 ├── .github/
 │   └── workflows/
 │       └── convert-cv.yml     # GitHub Actions workflow for conversion
@@ -35,14 +37,17 @@ md-cv/
   - Saves all generated files in the `outputs/` directory.
   - Uploads the `outputs/` directory as a workflow artifact.
   - Commits and pushes the updated `outputs/` directory back to the repository (on GitHub Actions only).
+  - Live HTML version hosted on GitHub Pages (after forked repo setup, see below).
 
 ## Getting Started
 
 1. **Fork this repository**
+   - (Optional:) [Set up GitHub Pages for a live HTML version](#github-pages).
+
 2. **Clone to your local machine**
 
    ```bash
-   git clone https://github.com/yourusername/cv-md.git
+   git clone https://github.com/YOUR_GITHUB_USERNAME/cv-md.git
    cd md-cv
    ```
 
@@ -68,6 +73,15 @@ md-cv/
    - The latest generated files are always available in / pushed to the `outputs/` directory in the repository.
    - You can also download them as workflow artifacts from the GitHub Actions run summary.
 
+## GitHub Pages
+
+To enhable a hosted GitHub Pages version:
+
+1. Go to your repo Settings > Pages.
+2. Under `Source`, select `Deploy from a branch`
+3. Under branch, select `master` and `/(root)`. Save
+4. Your CV will be accessible at: `https://YOUR-GITHUB-USERNAME.github.io/cv-md/outputs/cv`
+
 ## Notes
 
 - The workflow uses official Pandoc Docker images for reproducible builds.
@@ -79,16 +93,10 @@ md-cv/
 > [!NOTE]
 > If you run change the latex template, you may find errors where packages are not already included in the [`docker://pandoc/extra`](https://hub.docker.com/r/pandoc/extra) build.
 
-## GitHub Pages
-
-To enhable a hosted GitHub Pages version:
-
-1. Go to your repo Settings > Pages.
-2. Under `Source`, select `Deploy from a branch`
-3. Under branch, select `master` and `/(root)`. Save
-4. Your CV will be accessible at: `https://your-github-username.github.io/cv-md/outputs/cv.html`
-
 ## Requirements
 
 - A GitHub account with Actions enabled.
 - No local Pandoc or TeX installation is required; all conversion is handled in the workflow.
+
+## Read More
+You can read a bit more about this project [on my blog.](https://thrly.com/blog/cv-workflow/)

@@ -1,10 +1,11 @@
 ---
+title: CV
 author: Oliver Thurley
 email: example@gmail.com
 phone: "+447792------"
+web: thrly.com
 github: thrly
 linkedin: oliver-thurley
-title: CV
 updated: June 2025
 ---
 
@@ -50,6 +51,6 @@ Dynamic and detail-oriented professional with a strong background in [Your Field
 - **[Project Name]**: Brief description of the project and your role.
 - **[Project Name]**: Brief description of the project and your role.
 
-## References
+## Contact
 
-Available upon request.
+Please get in touch via [email](mailto:example@gmail.com) and find me on [GitHub](https://github.com/) or [LinkedIn](https://www.linkedin.com/in/).

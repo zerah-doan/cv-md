@@ -1,17 +1,25 @@
+:root {
+  --accent: hsl(170, 100%, 40%);
+  --grey: hsl(0, 0%, 40%);
+  --black: hsl(0, 0%, 10%);
+}
+
 body {
-  font-family: Montserrat, "Trebuchet MS", "Lucida Sans Unicode",
-    "Lucida Grande", "Lucida Sans", Arial, sans-serif, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: auto;
   max-width: 800px;
-  color: #222;
+  color: var(--black);
 }
 h1,
 h2 {
-  color: #005fa3;
+  color: var(--grey);
   margin-bottom: 0.5rem;
 }
 h1 {
+  margin-top: 3rem;
   margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 2.5em;
 }
 
 h3 {
@@ -20,11 +28,18 @@ h3 {
 }
 
 p {
-  margin: 0.5rem 0rem 0rem 2rem;
+  margin: 0.33rem 0rem 0rem 2rem;
 }
 
+a,
 p a {
-  color: #222;
+  text-decoration: none;
+  font-style: italic;
+  color: var(--black);
+}
+
+a:hover {
+  color: var(--accent);
 }
 
 ul {
@@ -34,7 +49,8 @@ ul {
 .social ul {
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 0%;
 }
 
 .social li {
@@ -46,7 +62,14 @@ ul {
 }
 .social a {
   text-decoration: none;
-  color: #222;
+  font-style: normal;
+  color: var(--black);
+}
+.social a:hover {
+  text-decoration: none;
+  font-style: normal;
+  color: white;
+  background-color: var(--black);
 }
 
 hr {
@@ -56,11 +79,6 @@ hr {
 
 footer {
   font-size: 0.8em;
-  color: #005fa3;
   text-align: center;
   margin-top: 4rem;
-}
-footer a {
-  text-decoration: none;
-  color: #222;
 }

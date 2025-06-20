@@ -13,7 +13,8 @@
 % Colors and section styling
 \definecolor{devblue}{HTML}{005fa3}
 \titleformat{\section}{\large\bfseries\color{devblue}}{}{0em}{}
-\titleformat{\subsection}{\normalsize\bfseries\color{black}}{}{0em}{}
+% Remove numbering from subsection headings
+\titleformat{\subsection}[block]{\normalsize\bfseries\color{black}}{}{0em}{}
 
 % Header and footer
 \pagestyle{fancy}
@@ -35,8 +36,9 @@
 \maketitle
 
 \vspace{-1em}
-\noindent\textbf{Email:} \href{mailto:$email$}{\texttt{$email$}} \hspace{1em}
+\noindent\href{mailto:$email$}{\texttt{$email$}} \hspace{1em}
 \textbf{Phone:} $phone$ \hspace{1em}
+\href{https://$web$}{\texttt{$web$}} \hspace{1em}
 \textbf{GitHub:} \href{https://github.com/$github$}{\texttt{$github$}} \hspace{1em}
 \textbf{LinkedIn:} \href{https://linkedin.com/in/$linkedin$}{\texttt{$linkedin$}}
 
