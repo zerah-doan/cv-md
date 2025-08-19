@@ -1,22 +1,27 @@
 ---
 title: CV
-author: Oliver Thurley
-email: example@gmail.com
-phone: "+447792------"
-web: thrly.com
-github: thrly
-linkedin: oliver-thurley
-updated: June 2025
+author: Quang Doan
+email: doanxuanquang9@gmail.com
+phone: "(+84)888688448"
+web: linkedin.com/in/xquang-doan
+github: zerah-doan
+linkedin: xquang-doan
+updated: Aug 2025
 ---
 
 Dynamic and detail-oriented professional with a strong background in [Your Field/Industry]. Proven ability to manage projects, lead teams, and deliver results in fast-paced environments.
 
 ## Education
 
-### Bachelor of Science in [Your Major]
+### Bachelor of Software Engineering
 
-[Your University], [City, State]  
-[Month, Year] - [Month, Year]
+FPT University Ho Chi Minh
+Sep 2009 - Jun 2013 (Full time)
+
+## Skills
+
+- **Technical Skills:** [Skill 1], [Skill 2], [Skill 3]
+- **Soft Skills:** [Skill 1], [Skill 2], [Skill 3]
 
 ## Experience
 
@@ -35,11 +40,6 @@ Dynamic and detail-oriented professional with a strong background in [Your Field
 
 - Assisted in [specific project or task].
 - Improved [specific process or metric] by [percentage or outcome].
-
-## Skills
-
-- **Technical Skills:** [Skill 1], [Skill 2], [Skill 3]
-- **Soft Skills:** [Skill 1], [Skill 2], [Skill 3]
 
 ## Certifications
 
