@@ -16,6 +16,7 @@ Dynamic and detail-oriented professional with a strong background in [Your Field
 ### Bachelor of Software Engineering
 
 FPT University Ho Chi Minh
+
 Sep 2009 - Jun 2013 (Full time)
 
 ## Skills

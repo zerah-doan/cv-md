@@ -28,11 +28,6 @@ jobs:
         with:
           args: cv/cv.md --output=outputs/cv.tex --template=cv/templates/cv-template.tex
 
-      - name: Convert to DOCX
-        uses: docker://pandoc/core:3.7
-        with:
-          args: outputs/cv.tex --output=outputs/cv.docx --reference-doc=cv/templates/cv-template.docx -t docx
-
       - name: Convert to HTML
         uses: docker://pandoc/core:3.7
         with:
